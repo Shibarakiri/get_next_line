@@ -3,15 +3,14 @@
 /*                                                       :::      ::::::::    */
 /*   get_next_line_utils.c                             :+:      :+:    :+:    */
 /*                                                   +:+ +:+         +:+      */
-/*   By: jeguiber <jeguiber@student.42.fr>         #+#  +:+       +#+         */
+/*   By: jeguiber <jeguiber@student.42lehavre.fr>  #+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/11/07 04:05:49 by jeguiber         #+#    #+#              */
-/*   Updated: 2026/11/07 10:08:30 by jeguiber        ###   ########.fr        */
+/*   Updated: 2026/11/11 20:03:14 by jeguiber        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <fcntl.h>
 #include <stdio.h>
 
 size_t	ft_strlen(const char *s)
@@ -70,32 +69,3 @@ char	*ft_strjoin(char *s1, char *s2)
 	res[j] = '\0';
 	return (free(s1), res);
 }
-
-// #include <stdio.h>
-// #include <string.h>
-
-// int	main(void)
-// {
-// 	printf("=== TEST FT_STRLEN ===\n");
-// 	printf("ft_strlen(\"42\") = %zu (attendu: 2)\n", ft_strlen("42"));
-// 	printf("ft_strlen(\"\") = %zu (attendu: 0)\n", ft_strlen(""));
-// 	printf("ft_strlen(NULL) = %zu (attendu: 0)\n", ft_strlen(NULL));
-// 	printf("\n=== TEST FT_NO_NEWLINE ===\n");
-// 	printf("ft_no_newline(\"Hello\\nWorld\") = %d (attendu: 0)\n",
-// 		ft_no_newline("Hello\nWorld"));
-// 	printf("ft_no_newline(\"HelloWorld\") = %d (attendu: 1)\n",
-// 		ft_no_newline("HelloWorld"));
-// 	printf("ft_no_newline(NULL) = %d (attendu: 1)\n", ft_no_newline(NULL));
-// 	printf("\n=== TEST FT_STRJOIN ===\n");
-// 	char	*s1 = strdup("Bonjour ");
-// 	char	*s2 = "le monde !";
-// 	char	*res = ft_strjoin(s1, s2);
-
-// 	printf("ft_strjoin(\"Bonjour \", \"le monde !\") = %s\n", res);
-// 	free(res);
-// 	char	*res_null = ft_strjoin(NULL, "Init depuis NULL");
-
-// 	printf("ft_strjoin(NULL, \"Init depuis NULL\") = %s\n", res_null);
-// 	free(res_null);
-// 	return (0);
-// }
