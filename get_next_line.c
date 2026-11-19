@@ -15,7 +15,7 @@
 static char	*ft_stash_all(int fd, char *stash)
 {
 	char	*tmp;
-	int		bread;
+	ssize_t		bread;
 
 	bread = 1;
 	tmp = malloc((BUFFER_SIZE + 1) * sizeof(char));
