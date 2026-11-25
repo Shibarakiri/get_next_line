@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   get_next_line.h                                   :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: jeguiber <jeguiber@student.42lehavre.fr>  #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/11/07 04:14:02 by jeguiber         #+#    #+#              */
-/*   Updated: 2026/11/11 20:02:17 by jeguiber        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/07 04:14:02 by jeguiber          #+#    #+#             */
+/*   Updated: 2026/11/20 12:54:50 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42

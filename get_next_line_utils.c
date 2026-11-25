@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   get_next_line_utils.c                             :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: jeguiber <jeguiber@student.42lehavre.fr>  #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/11/07 04:05:49 by jeguiber         #+#    #+#              */
-/*   Updated: 2026/11/11 20:03:14 by jeguiber        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/07 04:05:49 by jeguiber          #+#    #+#             */
+/*   Updated: 2026/11/25 15:38:02 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdio.h>
 
 size_t	ft_strlen(const char *s)
 {

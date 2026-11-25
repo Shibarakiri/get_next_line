@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   get_next_line_bonus.c                             :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: jeguiber <jeguiber@student.42lehavre.fr>  #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/11/11 20:01:43 by jeguiber         #+#    #+#              */
-/*   Updated: 2026/11/11 20:06:54 by jeguiber        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/11 20:01:43 by jeguiber          #+#    #+#             */
+/*   Updated: 2026/11/25 15:43:11 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ static char	*ft_stash_all(int fd, char *stash)
 	bread = 1;
 	tmp = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!tmp)
-		return (NULL);
+		return (free(stash), NULL);
 	while (ft_no_newline(stash) && bread)
 	{
 		bread = read(fd, tmp, BUFFER_SIZE);
 		if (bread == -1)
-		{
-			return (free(tmp), NULL);
-		}
+			return (free(tmp), free(stash), NULL);
 		tmp[bread] = '\0';
 		stash = ft_strjoin(stash, tmp);
+		if (!stash)
+			return (free(tmp), NULL);
 	}
 	return (free(tmp), stash);
 }

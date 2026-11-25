@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   get_next_line_utils_bonus.c                       :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: jeguiber <jeguiber@student.42lehavre.fr>  #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/11/11 20:02:09 by jeguiber         #+#    #+#              */
-/*   Updated: 2026/11/11 20:04:30 by jeguiber        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/11 20:02:09 by jeguiber          #+#    #+#             */
+/*   Updated: 2026/11/25 15:38:12 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
-#include <stdio.h>
 
 size_t	ft_strlen(const char *s)
 {

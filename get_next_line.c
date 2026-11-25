@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   get_next_line.c                                   :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: jeguiber <jeguiber@student.42lehavre.fr>  #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/11/07 04:03:43 by jeguiber         #+#    #+#              */
-/*   Updated: 2026/11/11 20:02:16 by jeguiber        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jeguiber <jeguiber@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/07 04:03:43 by jeguiber          #+#    #+#             */
+/*   Updated: 2026/11/25 15:51:08 by jeguiber         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 static char	*ft_stash_all(int fd, char *stash)
 {
 	char	*tmp;
-	ssize_t		bread;
+	ssize_t	bread;
 
 	bread = 1;
 	tmp = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!tmp)
-		return (NULL);
+		return (free(stash), NULL);
 	while (ft_no_newline(stash) && bread)
 	{
 		bread = read(fd, tmp, BUFFER_SIZE);
 		if (bread == -1)
-		{
-			return (free(tmp), NULL);
-		}
+			return (free(tmp), free(stash), NULL);
 		tmp[bread] = '\0';
 		stash = ft_strjoin(stash, tmp);
+		if (!stash)
+			return (free(tmp), NULL);
 	}
 	return (free(tmp), stash);
 }
@@ -95,3 +95,28 @@ char	*get_next_line(int fd)
 	stash = ft_free_all(stash);
 	return (line);
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	int		fd;
+// 	char	*line;
+// 	int		line_count;
+
+// 	fd = open("text.txt", O_RDONLY);
+// 	if (fd < 0)
+// 	{
+// 		printf("Erreur d'ouverture du fichier");
+// 		return (1);
+// 	}
+// 	line_count = 1;
+// 	while ((line = get_next_line(fd)) != NULL)
+// 	{
+// 		printf("Ligne %d : %s", line_count, line);
+// 		free(line);
+// 		line_count++;
+// 	}
+// 	close(fd);
+// 	return (0);
+// }
